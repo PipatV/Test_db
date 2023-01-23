@@ -1,0 +1,23 @@
+<%- include("head") %> 
+    <h2>Hello</h2>
+    <form action="/update" method="post">
+
+            <label>ชื่อลูกค้า</label>
+            <input type="text" name="name" value="<%= list.name %>" >
+            <label >ที่อยู่ลูกค้า</label>
+            <textarea class="form-control" value="<%= list.textarea %>" name="textarea" id="" cols="30" rows="10"></textarea>
+            <label>รหัสไปรษณีย์</label>
+            <input type="text"value="<%= list.idLo %>" name="idLo" id="">
+            <label>เบอร์โทรศัพท์</label>
+            <input type="text" value="<%= list.phone %>" name="phone" id="">
+            <br>
+            <br>
+            <input  value=" <%= list._id %>" name="update_id">
+            <button class="btn btn-primary" type="submit">อัพเดท</button>
+           
+        </form>
+
+        
+
+
+<%- include("foot") %> 

@@ -1,0 +1,43 @@
+<%- include("head") %> 
+    <h2>Hello</h2>
+    <form action="/add" method="post">
+
+            <label>ชื่อลูกค้า</label>
+            <input type="text" name="name" >
+            <label >ที่อยู่ลูกค้า</label>
+            <textarea class="form-control" name="textarea" id="" cols="30" rows="10"></textarea>
+            <label>รหัสไปรษณีย์</label>
+            <input type="text" name="idLo" id="">
+            <label>เบอร์โทรศัพท์</label>
+            <input type="text" name="phone" id="">
+            <br>
+            <br>
+            <button class="btn btn-primary" type="submit">บันทึก</button>
+           
+        </form>
+
+        <% Object.values(list).forEach(function(item){ %> 
+            <table>
+                <tr> 
+                    <th>ชื่อลูกค้า</th>
+                    <th>ที่อยู่ลูกค้า</th>
+                    <th>รหัสไปรษณีย์</th>
+                    <th>เบอร์โทรศัพท์</th>
+          
+                </tr>
+                <tr>
+                    <td><%= item.name  %>  </td>
+                    <td> <%= item.textarea %>  </td>
+                    <td> <%= item.idLo %>  </td>
+                    <td><%= item.phone %>  </td>
+                    
+    
+                    <td><a class="btn-btn-danger" href="/del/<%= item._id %>"  >ลบ</a> </td>
+                    <td> <a class="btn-btn-warning" href="/up/<%= item._id %> ">แก้ไข</a> </td>
+
+                </tr>
+            </table>
+        <%}) %> 
+
+
+<%- include("foot") %> 
